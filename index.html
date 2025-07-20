@@ -2,38 +2,48 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
-    <title>야짤 미리보기</title>
+    <title>야짤 저장소</title>
 
-    <!-- OG 태그 -->
-    <meta property="og:title" content="야짤 미리보기" />
-    <meta property="og:description" content="야짤 링크를 누르면 영상이 나와요" />
-    <meta property="og:image" content="https://github.com/joonytyt/preview-demo/blob/main/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpg" />
-    <meta property="og:url" content="https://joonytyt.github.io/preview-demo/" />
+    <!-- Open Graph 메타 태그: SNS 미리보기용 -->
+    <meta property="og:title" content="야짤 저장소 - 멋진 이미지" />
+    <meta property="og:description" content="이 링크를 누르면 놀라운 콘텐츠를 볼 수 있어요!" />
+    <meta property="og:image" content="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi2.ruliweb.com%2Fimg%2F23%2F11%2F24%2F18c0181ebcd481903.jpg&type=sc960_832" />
+    <meta property="og:url" content="https://username.github.io/yourrepo/" />
     <meta property="og:type" content="website" />
 
     <style>
-        body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
-        #thumb { cursor: pointer; width: 300px; border: 3px solid #333; border-radius: 10px; }
-        #player { margin-top: 30px; display: none; }
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #message {
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+            padding: 40px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            display: inline-block;
+            user-select: none;
+        }
+        #player {
+            margin-top: 30px;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1>야짤 미리보기</h1>
+    <h1>영상 보려면 클릭하세요!</h1>
 
-    <img id="thumb" src="https://github.com/joonytyt/preview-demo/blob/main/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpg" alt="썸네일" />
+    <div id="message">야짤이 준비되어 있습니다! 여기를 눌러 영상을 재생하세요.</div>
 
     <div id="player">
-        <iframe width="560" height="315" 
-            src="https://www.youtube.com/watch?v=V7qYaa15K-w" 
-            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/V7qYaa15K-w?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
     <script>
-        const thumb = document.getElementById('thumb');
+        const message = document.getElementById('message');
         const player = document.getElementById('player');
 
-        thumb.addEventListener('click', () => {
-            thumb.style.display = 'none';
+        message.addEventListener('click', () => {
+            message.style.display = 'none';
             player.style.display = 'block';
         });
     </script>
