@@ -1,67 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<title>야짤 저장소</title>
+    <meta charset="UTF-8" />
+    <title>야짤 저장소</title>
 
-<!-- OG 메타 태그: 미리보기용 -->
-<meta property="og:title" content="야짤 저장소 - 멋진 작품 모음!" />
-<meta property="og:description" content="이 링크 클릭하면 멋진 야짤과 영상이 뜹니다!" />
-<meta property="og:image" content="https://i.pximg.net/c/540x540_70/img-master/img/2022/11/01/00/00/00/132922127_p0_master1200.jpg" />
-<meta property="og:url" content="https://username.github.io/저장소명/" />
-<meta property="og:type" content="website" />
+    <!-- Open Graph 메타 태그: SNS 미리보기용 -->
+    <meta property="og:title" content="야짤 저장소 - 멋진 이미지" />
+    <meta property="og:description" content="이 링크를 누르면 놀라운 콘텐츠를 볼 수 있어요!" />
+    <meta property="og:image" content="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi2.ruliweb.com%2Fimg%2F23%2F11%2F24%2F18c0181ebcd481903.jpg&type=sc960_832" />
+    <meta property="og:url" content="https://username.github.io/yourrepo/" />
+    <meta property="og:type" content="website" />
 
-<style>
-  html, body {
-    margin:0; padding:0; height:100%; width:100%; background:#000; color:#fff;
-    font-family: Arial, sans-serif; text-align:center;
-  }
-  #thumb {
-    cursor:pointer;
-    max-width:90vw; max-height:90vh;
-    margin:40px auto;
-    border-radius:10px;
-    border:3px solid #fff;
-    display:block;
-  }
-  #player {
-    display:none;
-    position:fixed; top:0; left:0; width:100vw; height:100vh; background:#000;
-  }
-  #player iframe {
-    position:absolute; top:50%; left:50%;
-    transform:translate(-50%, -50%);
-    width:100vw; height:100vh;
-    border:none;
-  }
-  #player audio {
-    display:none;
-  }
-</style>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #thumb {
+            cursor: pointer;
+            width: 300px;
+            border: 3px solid #333;
+            border-radius: 10px;
+        }
+        #player {
+            margin-top: 30px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<h1>야짤 저장소 - 클릭하면 영상 재생!</h1>
+    <h1>누르면 영상 재생!</h1>
 
-<img id="thumb" src="https://i.pximg.net/c/540x540_70/img-master/img/2022/11/01/00/00/00/132922127_p0_master1200.jpg" alt="야짤 썸네일" />
+    <img id="thumb" src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi2.ruliweb.com%2Fimg%2F23%2F11%2F24%2F18c0181ebcd481903.jpg&type=sc960_832" alt="썸네일" />
 
-<div id="player">
-  <iframe id="ytplayer" src="https://www.youtube.com/embed/V7qYaa15K-w?autoplay=1&controls=1&loop=1&playlist=V7qYaa15K-w&mute=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  <audio id="audio" autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-</div>
+    <div id="player">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/V7qYaa15K-w?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
-<script>
-  const thumb = document.getElementById('thumb');
-  const player = document.getElementById('player');
-  const audio = document.getElementById('audio');
+    <script>
+        const thumb = document.getElementById('thumb');
+        const player = document.getElementById('player');
 
-  thumb.addEventListener('click', () => {
-    thumb.style.display = 'none';
-    player.style.display = 'block';
-    audio.play().catch(e => console.log('자동재생 차단:', e));
-  });
-</script>
+        thumb.addEventListener('click', () => {
+            thumb.style.display = 'none';
+            player.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
